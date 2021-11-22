@@ -17,6 +17,15 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'index.js',
-        publicPath: 'dist/',
+    },
+    devServer: {
+        static: {
+            directory: path.join(__dirname, '/dist'),
+        },
+        client: {
+            overlay: false, // デフォルトでブラウザに警告出るみたいなので消しておきました。
+        },
+        hot: true,
+        open: true,
     }
 }
